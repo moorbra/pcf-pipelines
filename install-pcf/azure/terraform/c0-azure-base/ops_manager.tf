@@ -18,6 +18,7 @@ resource "azurerm_network_interface" "ops_manager_nic" {
   }
 }
 
+
 resource "azurerm_virtual_machine" "ops_manager_vm" {
   name                  = "${var.env_name}-ops-manager-vm"
   depends_on            = ["azurerm_network_interface.ops_manager_nic", "azurerm_storage_blob.ops_manager_image"]
